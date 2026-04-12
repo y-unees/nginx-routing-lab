@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Learning Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        .neon-green {
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14;
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#0d1117] text-gray-300 min-h-screen">
+    <div class="max-w-4xl mx-auto py-16 px-6">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold neon-green mb-3">DEVOPS LAB</h1>
+            <p class="text-xl text-gray-400">Nginx Routing Practice Environment</p>
+        </header>
+
+        <!-- Navigation Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- ABC -->
+            <a href="/abc" class="card block bg-[#161b22] border border-gray-700 rounded-xl p-8 hover:border-[#39ff14]">
+                <div class="text-6xl mb-6">🔧</div>
+                <h2 class="text-2xl font-semibold text-white mb-3">/abc</h2>
+                <p class="text-gray-400 leading-relaxed">
+                    The DevOps Lab<br>
+                    <span class="text-sm neon-green">Continuous Integration & Deployment</span>
+                </p>
+            </a>
+
+            <!-- XYZ -->
+            <a href="/xyz" class="card block bg-[#161b22] border border-gray-700 rounded-xl p-8 hover:border-[#39ff14]">
+                <div class="text-6xl mb-6">🔒</div>
+                <h2 class="text-2xl font-semibold text-white mb-3">/xyz</h2>
+                <p class="text-gray-400 leading-relaxed">
+                    The Security Vault<br>
+                    <span class="text-sm neon-green">Hardening & Best Practices</span>
+                </p>
+            </a>
+
+            <!-- PQR -->
+            <a href="/pqr" class="card block bg-[#161b22] border border-gray-700 rounded-xl p-8 hover:border-[#39ff14]">
+                <div class="text-6xl mb-6">📚</div>
+                <h2 class="text-2xl font-semibold text-white mb-3">/pqr</h2>
+                <p class="text-gray-400 leading-relaxed">
+                    Documentation Hub<br>
+                    <span class="text-sm neon-green">Nginx & Linux Guides</span>
+                </p>
+            </a>
+        </div>
+
+        <div class="mt-16 text-center text-sm text-gray-500">
+            <p>Practice NGINX location blocks → <code class="bg-[#21262d] px-2 py-1 rounded">/abc</code>, <code class="bg-[#21262d] px-2 py-1 rounded">/xyz</code>, <code class="bg-[#21262d] px-2 py-1 rounded">/pqr</code></p>
+        </div>
+    </div>
+</body>
+</html>

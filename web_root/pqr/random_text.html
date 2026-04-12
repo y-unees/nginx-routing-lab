@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Hub - Nginx & Linux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        .neon-green {
+            color: #39ff14;
+            text-shadow: 0 0 8px #39ff14;
+        }
+        pre {
+            background-color: #0d1117;
+            border: 1px solid #21262d;
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-[#0d1117] text-gray-300 min-h-screen">
+    <div class="max-w-4xl mx-auto py-12 px-6">
+        <a href="/" class="inline-flex items-center text-[#39ff14] hover:underline mb-8">
+            ← Back to Home
+        </a>
+
+        <h1 class="text-4xl font-bold neon-green mb-2">Documentation Hub</h1>
+        <p class="text-gray-400 text-lg mb-10">Nginx Routing & Linux Server Guides</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Nginx Section -->
+            <div class="bg-[#161b22] border border-gray-700 rounded-2xl p-8 card">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-4xl">🌐</span>
+                    <h2 class="text-2xl font-semibold text-white">Nginx Basics</h2>
+                </div>
+                
+                <div class="space-y-6 text-sm">
+                    <div>
+                        <h3 class="font-semibold neon-green mb-2">Common Location Blocks</h3>
+                        <pre class="p-4 rounded-xl text-gray-300 overflow-x-auto text-xs leading-relaxed">
+location / {
+    root /var/www/html;
+    index index.html;
+}
+
+location /abc {
+    alias /var/www/html/abc.html;
+    try_files $uri =404;
+}
+
+location /xyz {
+    alias /var/www/html/xyz.html;
+    try_files $uri =404;
+}</pre>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold neon-green mb-2">Useful Directives</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-300">
+                            <li><code>proxy_pass</code> — Reverse proxy</li>
+                            <li><code>rewrite</code> — URL rewriting</li>
+                            <li><code>try_files</code> — File existence check</li>
+                            <li><code>return 301</code> — Permanent redirect</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linux Commands Section -->
+            <div class="bg-[#161b22] border border-gray-700 rounded-2xl p-8 card">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-4xl">🐧</span>
+                    <h2 class="text-2xl font-semibold text-white">Essential Linux Commands</h2>
+                </div>
+                
+                <div class="space-y-5">
+                    <div class="bg-[#0d1117] p-5 rounded-xl">
+                        <p class="text-[#39ff14] font-mono text-xs mb-1">System Update</p>
+                        <p class="font-mono text-sm">sudo apt update && sudo apt upgrade -y</p>
+                    </div>
+
+                    <div class="bg-[#0d1117] p-5 rounded-xl">
+                        <p class="text-[#39ff14] font-mono text-xs mb-1">Check Nginx Status</p>
+                        <p class="font-mono text-sm">sudo systemctl status nginx</p>
+                    </div>
+
+                    <div class="bg-[#0d1117] p-5 rounded-xl">
+                        <p class="text-[#39ff14] font-mono text-xs mb-1">Test Nginx Config</p>
+                        <p class="font-mono text-sm">sudo nginx -t</p>
+                    </div>
+
+                    <div class="bg-[#0d1117] p-5 rounded-xl">
+                        <p class="text-[#39ff14] font-mono text-xs mb-1">View Logs</p>
+                        <p class="font-mono text-sm">sudo tail -f /var/log/nginx/access.log</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Tips -->
+        <div class="mt-12 bg-[#161b22] border border-gray-700 rounded-2xl p-8">
+            <h2 class="text-xl font-semibold neon-green mb-6 flex items-center gap-2">
+                <span>💡</span> Pro Tips for NGINX Routing
+            </h2>
+            <div class="grid grid-cols-1 gap-4 text-sm">
+                <div class="flex gap-4">
+                    <span class="text-[#39ff14] font-bold w-6">1.</span>
+                    <p>Use <code class="bg-black px-2 py-0.5 rounded">try_files $uri =404;</code> to return clean 404 errors</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-[#39ff14] font-bold w-6">2.</span>
+                    <p>Always test config with <code class="bg-black px-2 py-0.5 rounded">sudo nginx -t</code> before reloading</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-[#39ff14] font-bold w-6">3.</span>
+                    <p>Reload Nginx without downtime: <code class="bg-black px-2 py-0.5 rounded">sudo systemctl reload nginx</code></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center text-xs text-gray-500 border-t border-gray-700 pt-8">
+            This page is served via Nginx location block: 
+            <code class="bg-[#21262d] px-3 py-1 rounded text-[#39ff14]">/pqr</code>
+        </div>
+    </div>
+</body>
+</html>

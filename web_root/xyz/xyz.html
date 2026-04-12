@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Security Vault</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', system-ui, sans-serif; }
+        .neon-green { color: #39ff14; }
+    </style>
+</head>
+<body class="bg-[#0d1117] text-gray-300 min-h-screen">
+    <div class="max-w-3xl mx-auto py-12 px-6">
+        <a href="/" class="inline-flex items-center text-[#39ff14] hover:underline mb-8">
+            ← Back to Home
+        </a>
+
+        <h1 class="text-4xl font-bold neon-green mb-2">The Security Vault</h1>
+        <p class="text-gray-400 text-lg mb-10">Linux Server Hardening Best Practices</p>
+
+        <div class="prose prose-invert max-w-none">
+            <h2 class="text-2xl font-semibold text-white mb-6">Basic Security Hardening Steps</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-[#161b22] p-6 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-semibold neon-green mb-3">1. Update & Upgrade System</h3>
+                    <pre class="bg-black p-4 rounded text-sm text-gray-300 overflow-x-auto">sudo apt update && sudo apt upgrade -y</pre>
+                </div>
+
+                <div class="bg-[#161b22] p-6 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-semibold neon-green mb-3">2. Create Non-root User & Disable Root SSH</h3>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-300">
+                        <li>Create a sudo user</li>
+                        <li>Disable password authentication</li>
+                        <li>Use SSH key-based authentication only</li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#161b22] p-6 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-semibold neon-green mb-3">3. Firewall Configuration (UFW)</h3>
+                    <pre class="bg-black p-4 rounded text-sm text-gray-300 overflow-x-auto">sudo ufw allow OpenSSH
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable</pre>
+                </div>
+
+                <div class="bg-[#161b22] p-6 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-semibold neon-green mb-3">4. Additional Hardening</h3>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li>✅ Install Fail2Ban</li>
+                        <li>✅ Disable unused services</li>
+                        <li>✅ Set strong password policy</li>
+                        <li>✅ Enable automatic security updates</li>
+                        <li>✅ Monitor logs with journalctl / auditd</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-xs text-gray-500 border-t border-gray-700 pt-6">
+            This page is served via Nginx location block: <code class="bg-[#21262d] px-2 py-1 rounded">/xyz</code>
+        </div>
+    </div>
+</body>
+</html>
