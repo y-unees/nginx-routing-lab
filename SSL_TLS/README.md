@@ -2,7 +2,7 @@
 
 > **Lab Series:** The Nginx Routing Lab
 > **Phase 1 Foundation:** [Static Routing & Clean URIs](https://github.com/y-unees/nginx-routing-lab/blob/main/README.md)
-> **Live Environment:** `https://your-domain.com` *(demonstration domain; may be inactive post-lab)*
+> **Live Environment:** `https://lab.unishdhungana.com.np` *(demonstration domain; may be inactive post-lab)*
 
 ---
 
